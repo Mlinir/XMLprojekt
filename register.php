@@ -72,7 +72,7 @@
                     password: {
                         required: true,
                     },
-                    password23: {
+                    password2: {
                         required: true,
                         equalTo: "#password"
                     }
