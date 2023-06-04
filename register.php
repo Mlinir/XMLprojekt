@@ -114,8 +114,7 @@ if (isset($_POST['submit'])) {
             $user = $xml->addChild('user');
             $user->addChild('username', $username);
             $user->addChild('password', $hashed_password);
-            $notes = $user->addChild('notes');
-            $notes->addChild('note', ' ');
+            $user->addChild('notes',' ');
             $xml->asXML('users.xml');
             echo "<p><center>Kreiran novi korisnik.</center></p>";
         } else {

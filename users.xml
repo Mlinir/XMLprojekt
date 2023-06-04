@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <users>
+
     <user>
-        <username/>
-        <password/>
-        <notes>
-            <note> </note>
-        </notes>
+        <username>test</username>
+        <password>$2y$10$NV8AKIx9pd.mS4B8pItBnuNuGku7mK9UKNhG5KJ408WuRRHAskt0.</password>
+        <notes> </notes>
     </user>
-<user><username>test</username><password>$2y$10$bDCNbpZLYbdxVDwPXA7Eu.VRsqrgB26tx5TtJwWctIZiSc/hW9BTe</password><notes><note> </note></notes></user></users>
+</users>
