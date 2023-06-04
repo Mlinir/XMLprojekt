@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <users>
     <user>
-        <username />
-        <password />
+        <username/>
+        <password/>
         <notes>
             <note> </note>
         </notes>
     </user>
-</users>
+<user><username>test</username><password>$2y$10$bDCNbpZLYbdxVDwPXA7Eu.VRsqrgB26tx5TtJwWctIZiSc/hW9BTe</password><notes><note> </note></notes></user></users>
