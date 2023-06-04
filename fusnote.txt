@@ -8,3 +8,10 @@ automatsko brisanje
 
 xml
 php
+
+login
+session
+dobrodosli
+
+session notepad
+write
