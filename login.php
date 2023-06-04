@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-2">
-                <form action="login.php" method="post" name="register">
+                <form action="login.php" method="post" name="login">
                     <label for="username">Korisničko ime</label>
                     <br />
                     <input name="username" type="text" id="username" />
@@ -49,7 +49,6 @@
                     <br /><br />
                     <input name="submit" type="submit" value="Pošalji" />
                 </form>
-
             </div>
         </div>
     </div>
@@ -84,24 +83,25 @@
 </html>
 
 <?php
-
+session_start();
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $count=0;
+    $count = 0;
     if ($password != '') {
         $xml = simplexml_load_file('users.xml');
         foreach ($xml->user as $user) {
             if ($user->username == $username) {
                 $count++;
-                if (password_verify($password,$user->password)){
-                    echo '<center>Dobrodošli ' , $username,'</br><a href="notes.php">Moje bilješke</a></center>';
-                } else{
+                if (password_verify($password, $user->password)) {
+                    echo '<center>Dobrodošli ', $username, '</br><a href="notes.php">Moje bilješke</a></center>';
+                    $_SESSION['username'] = $username;
+                } else {
                     echo "<center>Pogrešna lozinka</center>";
                 }
             }
         }
-        if (!($count)){
+        if (!($count)) {
             echo "<center>Pogrešno korisničko ime</center>";
         }
     }
