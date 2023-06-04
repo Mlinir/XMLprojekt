@@ -3,6 +3,7 @@ session_start();
 // $number=0;
 function onDelete($number)
 {
+    echo "jel radi";
     $xml = simplexml_load_file('users.xml');
     foreach ($xml->user as $user) {
         if ($user->username == $_SESSION['username']) {
