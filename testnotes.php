@@ -5,19 +5,18 @@ if (isset($_POST['delete'])) {
     $xml = simplexml_load_file('users.xml');
     foreach ($xml->user as $user) {
         if ($user->username == $_SESSION['username']) {
-            foreach ($user->notes->note as $note) {
-                if ($note['id'] == $number) {
-                    $dom = dom_import_simplexml($note);
-                    $dom->parentNode->removeChild($dom);
-                    break;
+            foreach ($user->notes as $notes) {
+                if ($notes->note['id'] == $number) {
+                    echo "somthin";
+                    unset($notes->note);
                 }
             }
             $xml->asXML('users.xml');
             echo "Bilješka uspješno obrisana";
-            break;
         }
     }
 }
+
 ?>
 
 <!doctype html>
@@ -75,7 +74,7 @@ if (isset($_POST['delete'])) {
                             echo $note->date, '<br/>';
                             echo $note->content, '<br/>';
                             echo '<form action="notes.php" method="post">';
-                            echo '<button class="btn btn-sm btn-danger type="submit" value="'. $note["id"]. '" name="delete"/>Izbriši</button><br/>';
+                            echo '<button class="btn btn-sm btn-danger type="submit" value="' . $count . '" name="delete"/>Izbriši</button><br/>';
                             echo '</form>';
                         }
                     }

@@ -1,23 +1,20 @@
 <?php
 session_start();
-if (isset($_POST['delete'])) {
-    $number = $_POST['delete'];
-    $xml = simplexml_load_file('users.xml');
-    foreach ($xml->user as $user) {
-        if ($user->username == $_SESSION['username']) {
-            foreach ($user->notes->note as $note) {
-                if ($note['id'] == $number) {
-                    $dom = dom_import_simplexml($note);
-                    $dom->parentNode->removeChild($dom);
-                    break;
-                }
-            }
-            $xml->asXML('users.xml');
-            echo "Bilješka uspješno obrisana";
-            break;
-        }
-    }
-}
+// $number=0;
+// if (isset($_POST['delete'])) {
+
+//     echo "jel radi";
+//     $xml = simplexml_load_file('users.xml');
+//     foreach ($xml->user as $user) {
+//         if ($user->username == $_SESSION['username']) {
+//             $note = $user->notes->note[$number];
+//             $user->notes->removeChild($note);
+//             $xml->asXML('users.xml');
+//             echo "Bilješka uspješno obrisana";
+//         }
+//     }
+//     echo "myass";
+// }
 ?>
 
 <!doctype html>
@@ -74,9 +71,7 @@ if (isset($_POST['delete'])) {
                             $count++;
                             echo $note->date, '<br/>';
                             echo $note->content, '<br/>';
-                            echo '<form action="notes.php" method="post">';
-                            echo '<button class="btn btn-sm btn-danger type="submit" value="'. $note["id"]. '" name="delete"/>Izbriši</button><br/>';
-                            echo '</form>';
+                            echo '<button class="btn btn-sm btn-danger onclick="onDelete(' . $count . ')"/>Izbriši</button><br/>';
                         }
                     }
                 }
@@ -84,7 +79,12 @@ if (isset($_POST['delete'])) {
             </div>
         </div>
     </div>
-
+    <script type="text/javascript">
+        function onDelete($arg){
+            document.write(5 + 6);
+        }
+        
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 

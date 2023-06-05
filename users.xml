@@ -5,8 +5,18 @@
         <username>test</username>
         <password>$2y$10$NV8AKIx9pd.mS4B8pItBnuNuGku7mK9UKNhG5KJ408WuRRHAskt0.</password>
         <notes>
-
+        
             
-        <note><date>21:50:23, 04.06.2023</date><content>1234</content></note><note><date>21:50:25, 04.06.2023</date><content>1234</content></note><note><date>21:57:27, 04.06.2023</date><content>2233</content></note></notes>
+        </notes>
+    </user>
+    <user>
+        <username>test2</username>
+        <password>$2y$10$sySHYXbg1dKhr29QSAvbY.gcI7pGIZ73bQlgFHQfZN88mL..D9jkK</password>
+        <notes>
+            <note>
+                <date>20:50:48, 05.06.2023</date>
+                <content>moja biljeska</content>
+            </note>
+        </notes>
     </user>
 </users>
