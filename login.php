@@ -29,7 +29,7 @@
             <div class="navbar" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="homepage.html">Početna</a>
+                        <a class="nav-link" href="homepage.php"><u>Početna</u></a>
                     </li>
                 </ul>
             </div>

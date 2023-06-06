@@ -5,17 +5,28 @@
         <username>test</username>
         <password>$2y$10$NV8AKIx9pd.mS4B8pItBnuNuGku7mK9UKNhG5KJ408WuRRHAskt0.</password>
         <notes>
-        
-            
+
+
+            <note id="0">
+                <date>21:57:26, 06.06.2023</date>
+                <content>dwdw</content>
+            </note>
         </notes>
     </user>
     <user>
         <username>test2</username>
         <password>$2y$10$sySHYXbg1dKhr29QSAvbY.gcI7pGIZ73bQlgFHQfZN88mL..D9jkK</password>
         <notes>
-            <note>
-                <date>20:50:48, 05.06.2023</date>
-                <content>moja biljeska</content>
+
+        </notes>
+    </user>
+    <user>
+        <username>hehe</username>
+        <password>$2y$10$0S3iB3b9cwUJ6wm3IcyF1uixEzeLj2paK1A7MADFQ4Csa19vks/bm</password>
+        <notes>
+            <note id="0">
+                <date>22:07:40, 06.06.2023</date>
+                <content>dwdw</content>
             </note>
         </notes>
     </user>

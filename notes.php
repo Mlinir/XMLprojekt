@@ -1,22 +1,9 @@
 <?php
 session_start();
-if (isset($_POST['delete'])) {
-    $number = $_POST['delete'];
-    $xml = simplexml_load_file('users.xml');
-    foreach ($xml->user as $user) {
-        if ($user->username == $_SESSION['username']) {
-            foreach ($user->notes->note as $note) {
-                if ($note['id'] == $number) {
-                    $dom = dom_import_simplexml($note);
-                    $dom->parentNode->removeChild($dom);
-                    break;
-                }
-            }
-            $xml->asXML('users.xml');
-            echo "Bilješka uspješno obrisana";
-            break;
-        }
-    }
+if (isset($_POST['logout'])){
+    session_destroy();
+    header("Location: login.php");
+    die();
 }
 ?>
 
@@ -45,12 +32,36 @@ if (isset($_POST['delete'])) {
             <div class="navbar" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="homepage.html">Početna</a>
+                        <a class="nav-link" href="homepage.php"><u>Početna</u></a>
                     </li>
                 </ul>
             </div>
+            <form method="post" action="notes.php">
+                <button class="btn btn-sm btn-primary" type="submit" name="logout">Odjava</button>
+            </form>
         </nav>
     </div>
+    <?php
+    if (isset($_POST['delete'])) {
+        $number = $_POST['delete'];
+        $xml = simplexml_load_file('users.xml');
+        foreach ($xml->user as $user) {
+            if ($user->username == $_SESSION['username']) {
+                foreach ($user->notes->note as $note) {
+                    if ($note['id'] == $number) {
+                        $dom = dom_import_simplexml($note);
+                        $dom->parentNode->removeChild($dom);
+                        break;
+                    }
+                }
+                $xml->asXML('users.xml');
+                break;
+            }
+        }
+        header("Refresh:0");
+    }
+    ?>
+
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-4">
@@ -75,7 +86,7 @@ if (isset($_POST['delete'])) {
                             echo $note->date, '<br/>';
                             echo $note->content, '<br/>';
                             echo '<form action="notes.php" method="post">';
-                            echo '<button class="btn btn-sm btn-danger type="submit" value="'. $note["id"]. '" name="delete"/>Izbriši</button><br/>';
+                            echo '<button class="btn btn-sm btn-danger" type="submit" value="' . $note["id"] . '" name="delete"/>Izbriši</button><br/>';
                             echo '</form>';
                         }
                     }
@@ -101,9 +112,9 @@ if (isset($_POST['submit'])) {
                 $note->addChild('date', date("H:i:s, d.m.Y"));
                 $note->addChild('content', $content);
                 $xml->asXML('users.xml');
-                echo "Bilješke uspješno unesene";
             }
         }
     }
+    header("Refresh:0");
 }
 ?>

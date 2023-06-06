@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +37,11 @@
             <div class="navbar" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="notes.php">Moje bilješke</a>
+                        <?php 
+                        if (isset($_SESSION['username'])){
+                        echo '<a class="nav-link" href="notes.php"><u>Moje bilješke</u></a>';
+                    }
+                        ?>
                     </li>
                 </ul>
             </div>
