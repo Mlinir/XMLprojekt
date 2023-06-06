@@ -1,33 +1,4 @@
 <?xml version="1.0"?>
 <users>
 
-    <user>
-        <username>test</username>
-        <password>$2y$10$NV8AKIx9pd.mS4B8pItBnuNuGku7mK9UKNhG5KJ408WuRRHAskt0.</password>
-        <notes>
-
-
-            <note id="0">
-                <date>21:57:26, 06.06.2023</date>
-                <content>dwdw</content>
-            </note>
-        </notes>
-    </user>
-    <user>
-        <username>test2</username>
-        <password>$2y$10$sySHYXbg1dKhr29QSAvbY.gcI7pGIZ73bQlgFHQfZN88mL..D9jkK</password>
-        <notes>
-
-        </notes>
-    </user>
-    <user>
-        <username>hehe</username>
-        <password>$2y$10$0S3iB3b9cwUJ6wm3IcyF1uixEzeLj2paK1A7MADFQ4Csa19vks/bm</password>
-        <notes>
-            <note id="0">
-                <date>22:07:40, 06.06.2023</date>
-                <content>dwdw</content>
-            </note>
-        </notes>
-    </user>
-</users>
+<user><username>test</username><password>$2y$10$JJK9jQmQH7Ag8wzIRZC4ruaZYSINd0JzRFxKvyBgQ/Hb8PV3KEKgS</password><notes> <note id="0"><date>22:20:53, 06.06.2023</date><content>biljeska</content></note></notes></user></users>
